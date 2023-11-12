@@ -12,7 +12,7 @@ import UIKit
  You can subclass `UITabBarSelectionController` and override its methods to implement custom behavior when a tab is selected.
 */
 // swiftlint: disable all
-@available(iOS 13.0, *)
+@available(iOS 14.0, *)
 open class UITabBarSelectionController: UITabBarController {
     open override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         guard let index = tabBar.items?.firstIndex(of: item) else {
@@ -35,7 +35,7 @@ open class UITabBarSelectionController: UITabBarController {
     }
     open func imageView(of item: UITabBarItem) -> UIImageView? {
         guard let index = self.tabBar.items?.firstIndex(of: item) else {
-            debugPrint("Failed to get item's index from UITabBar when animating")
+            Logger.log("Failed to get item's index from UITabBar when animating", category: \.default, level: .error)
             return nil
         }
         let itemSubviews: [UIView] = tabBar.subviews[index+1].subviews

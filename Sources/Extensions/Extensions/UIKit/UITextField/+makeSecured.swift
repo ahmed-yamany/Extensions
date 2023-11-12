@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import MakeConstraints
 
 /// An extension to enhance the functionality of UITextField for making it secure with a toggle button.
 extension UITextField {
@@ -14,7 +13,7 @@ extension UITextField {
     public func makeSecured(withTintColor tintColot: UIColor) {
         // Create a UIButton to act as the toggle button for secure text entry.
         let button = UIButton()
-        button.widthConstraints(36)
+        button.widthAnchor.constraint(equalToConstant: 36).isActive = true
         button.tintColor = tintColot
         button.addTarget(self, action: #selector(securedButtonAction(_:)), for: .touchUpInside)
         rightView = button

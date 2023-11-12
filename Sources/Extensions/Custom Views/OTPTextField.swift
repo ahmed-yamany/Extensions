@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import MakeConstraints
 import Combine
 
 // MARK: - ViewModel
@@ -113,7 +112,8 @@ open class OTPTextField: UITextField {
             return dataSource.createDigitLabel()
         } else {
             debugPrint("")
-            Logger.log("Couldn't wrap dataSource, We are using the default Style", category: \.default, level: .error)
+            Logger.log("Couldn't wrap dataSource for OTPTextField, We are using the default Style",
+                       category: \.default, level: .error)
             return createDefaultDigitLabel()
         }
     }
