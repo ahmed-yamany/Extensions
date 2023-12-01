@@ -8,7 +8,7 @@
 import UIKit
 
 @IBDesignable
-open class FlexiblePageControl: UIControl {
+open class FlexiblePageControl: UIView {
     // MARK: - Properties
     @IBInspectable open var numberOfPages: Int = 1 {
         didSet {
@@ -47,14 +47,17 @@ open class FlexiblePageControl: UIControl {
     // MARK: - Initialization
     public override init(frame: CGRect) {
         super.init(frame: frame)
-        configurePagesStackView()
+        configure()
     }
     public required init?(coder: NSCoder) {
         super.init(coder: coder)
-        configurePagesStackView()
+        configure()
     }
     // MARK: - Private Methods
-
+    private func configure() {
+        backgroundColor = .clear
+        configurePagesStackView()
+    }
     private func configurePagesStackView() {
         pagesStackView.axis = .horizontal
         pagesStackView.alignment = .center
