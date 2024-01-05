@@ -8,7 +8,6 @@
 import SwiftUI
 
 @available(iOS 13.0, *)
-
 public extension View {
     /// Hide or show the view based on a boolean value.
     ///
